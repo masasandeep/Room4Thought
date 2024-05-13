@@ -1,0 +1,7 @@
+<h3>Recent Activity</h3>
+{% for message in room_messages%}
+<h4><a href="{%url 'user-profile' message.user.id %}"> @{{message.user}}</a> {{message.created|timesince}} </h4>
+<h4>Recently reacted on {{message.room.topic}}</h4>
+<h4>{{message}}</h4>
+<hr/>
+{%endfor%}

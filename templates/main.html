@@ -1,0 +1,21 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>studybud</title>
+    <link rel="stylesheet"  media="screen" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    {% block content %}
+    {%endblock%}
+</body>
+</html>
