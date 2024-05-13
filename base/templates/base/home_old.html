@@ -1,36 +1,36 @@
-{% extends 'main.html'%}
-{% block content%}
+{% extends 'main.html' %}
+
+{% block content %}
+
 <style>
-    .container{
-        display:grid;
+    .home-container {
+        display: grid;
         grid-template-columns: 1fr 3fr 1fr;
     }
 </style>
-<div>
-    <form method="GET" action="{% url 'home' %}">
-        <input type="text" placeholder="search......." name="q"/>
-    </form>
-    <span> hi {{request.user}} </span>
-</div>
-<div>
-    {% if request.user.is_authenticated%}
-    <h2><a href="{% url 'logout' %}">logout</a></h2>
-    {%else%}
-    <h2><a href="{% url 'login' %}">login</a></h2>
-    {% endif %}
-</div>
-<div class="container">
+
+
+<div class="home-container">
+
     <div>
-        {%include 'base/topics_feed.html' %}
+        {% include 'base/topics_component.html' %}
     </div>
-    
+
     <div>
-        <h1><a href="{% url 'create-room'%}">Createroom</a></h1>
-        <h3>{{roomcount}} rooms available</h3>
-       {%include 'base/room_activity.html' %}
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url 'create-room' %}">Create Room</a>
+
+        {% include 'base/feed_component.html' %}
+
     </div>
+
+
     <div>
-       {% include 'base/activity_feed.html' %}
+        {% include 'base/activity_component.html' %}
     </div>
+
+
+
 </div>
-{%endblock%}
+
+{% endblock content %}
