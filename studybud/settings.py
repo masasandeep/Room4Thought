@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG=os.environ.get("DEBUG","True")=='True'
 DEBUG = False
-ALLOWED_HOSTS = [ ]
+ALLOWED_HOSTS = [ '127.0.0.1', 'localhost','studybud-dg11.onrender.com']
 
 
 # Application definition
